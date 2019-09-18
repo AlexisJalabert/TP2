@@ -81,5 +81,10 @@ public class TicketMachineTest {
         public void montantNegatif() {
             machine.insertMoney(-3);
         }
-
+        
+        @Test(expected = IllegalArgumentException.class)
+        // S10 : on ne peut pas créer de machine qui délivre des tickets dont le prix est négatif
+        public void prixTicketNega() {
+            TicketMachine machine2 = new TicketMachine(-20);
+        }
 }
