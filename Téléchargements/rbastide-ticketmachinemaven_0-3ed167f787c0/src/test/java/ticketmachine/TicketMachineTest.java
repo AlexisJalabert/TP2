@@ -46,5 +46,10 @@ public class TicketMachineTest {
         
         @Test
         // S5 :Quand on imprime un ticket la balance est décrémentée du prix du ticket
+        public void balanceDec() {
+            machine.insertMoney(70);
+            machine.printTicket();
+            assertEquals("La balance n'est pas décrémenter", 70-PRICE, machine.getBalance());
+        }
 
 }
