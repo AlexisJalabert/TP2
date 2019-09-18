@@ -60,5 +60,12 @@ public class TicketMachineTest {
             assertEquals("Le montant collecté n'est pas ajouté", PRICE, machine.getTotal());
             
         }
+        
+        @Test
+        // S7 : refund() rend correctement la monnaie
+        public void rendMonnaie() {
+            machine.insertMoney(PRICE);
+            assertEquals("La monnaie n'a pas été rendu correctement", PRICE, machine.refund());
+        }
 
 }
