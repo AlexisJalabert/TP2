@@ -67,5 +67,13 @@ public class TicketMachineTest {
             machine.insertMoney(PRICE);
             assertEquals("La monnaie n'a pas été rendu correctement", PRICE, machine.refund());
         }
+        
+        @Test
+        // S8 : refund() remet la balance à zéro
+        public void balanceZero() {
+            machine.insertMoney(PRICE);
+            machine.refund();
+            assertEquals("Balance n'est pas remise à zéro",0,machine.getBalance());
+        }
 
 }
