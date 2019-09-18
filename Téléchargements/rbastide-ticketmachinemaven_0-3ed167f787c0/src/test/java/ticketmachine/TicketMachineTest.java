@@ -75,5 +75,11 @@ public class TicketMachineTest {
             machine.refund();
             assertEquals("Balance n'est pas remise à zéro",0,machine.getBalance());
         }
+        
+        @Test(expected = IllegalArgumentException.class)
+        // S9 : on ne peut pas insérer un montant négatif
+        public void montantNegatif() {
+            machine.insertMoney(-3);
+        }
 
 }
