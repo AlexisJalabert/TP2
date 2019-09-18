@@ -56,6 +56,7 @@ public class TicketMachineTest {
         // S6 : le montant collecté est mis à jour quand on imprime un ticket (pas avant)
         public void totalCollected() {
             machine.insertMoney(PRICE);
+            assertEquals("Le montant collecté a été ajouté", 0, machine.getTotal());
             machine.printTicket();
             assertEquals("Le montant collecté n'est pas ajouté", PRICE, machine.getTotal());
             
@@ -69,7 +70,7 @@ public class TicketMachineTest {
         }
         
         @Test
-        // S8 : refund() remet la balance à zéro
+        // S8 : refund() remet la balance à zérmachine.insertMoney(PRICE);
         public void balanceZero() {
             machine.insertMoney(PRICE);
             machine.refund();
