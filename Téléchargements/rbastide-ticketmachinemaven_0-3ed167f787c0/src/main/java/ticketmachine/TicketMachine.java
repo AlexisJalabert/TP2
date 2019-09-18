@@ -93,6 +93,7 @@ public class TicketMachine {
 		System.out.println("# " + price + " cents.");
 		System.out.println("##################");
 		System.out.println();
+                this.balance -= price;
 		return true;
 	}
 }
