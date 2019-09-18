@@ -51,5 +51,14 @@ public class TicketMachineTest {
             machine.printTicket();
             assertEquals("La balance n'est pas décrémenter", 70-PRICE, machine.getBalance());
         }
+        
+        @Test
+        // S6 : le montant collecté est mis à jour quand on imprime un ticket (pas avant)
+        public void totalCollected() {
+            machine.insertMoney(PRICE);
+            machine.printTicket();
+            assertEquals("Le montant collecté n'est pas ajouté", PRICE, machine.getTotal());
+            
+        }
 
 }
